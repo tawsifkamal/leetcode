@@ -1,3 +1,20 @@
+"""
+LRU Cache Implementation using Doubly Linked List and HashMap
+
+This module implements a Least Recently Used (LRU) cache with O(1) operations.
+Uses a combination of HashMap for O(1) access and Doubly Linked List for O(1) 
+insertion/deletion at arbitrary positions.
+
+Data Structures:
+- HashMap: key -> (value, node_reference) 
+- Doubly Linked List: maintains LRU order
+
+Time Complexity: O(1) for get and put operations
+Space Complexity: O(capacity)
+
+Author: Leetcode Practice
+"""
+
 class DDL:
     def __init__(self):
         self.head = None

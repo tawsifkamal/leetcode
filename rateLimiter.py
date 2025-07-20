@@ -1,3 +1,16 @@
+"""
+Rate Limiter Implementation using Sliding Window
+
+This module implements a rate limiter that allows maximum N requests per 
+time window using a sliding window approach with deque data structure.
+
+Algorithm: Sliding window with timestamp tracking
+Time Complexity: O(1) amortized for shouldAllowRequest
+Space Complexity: O(window_size)
+
+Author: Leetcode Practice
+"""
+
 from collections import deque
 
 

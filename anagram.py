@@ -1,3 +1,19 @@
+"""
+Anagram Detection Algorithm Implementation
+
+This module implements two different approaches to detect if any anagram of pattern 'p' 
+exists as a substring in string 'v' using sliding window technique.
+
+Algorithms implemented:
+1. solution() - First approach using sliding window with character frequency tracking
+2. solution2() - Second approach with optimized sliding window
+
+Time Complexity: O(n) where n is length of string v
+Space Complexity: O(k) where k is number of unique characters in pattern p
+
+Author: Leetcode Practice
+"""
+
 import collections
 
 '''
@@ -151,8 +167,7 @@ def solution2(v, p):
 
     while r < len(p):
         if v[r] in dictP:
-            dictV[v[i]] = dictV.get(v[i], 0) + 1
-
+            dictV[v[r]] = dictV.get(v[r], 0) + 1
         r = r + 1
 
     
@@ -160,13 +175,13 @@ def solution2(v, p):
         if dictV == dictP:
             return True
 
-        if v[l] in dictP:
+        if v[l] in dictP and v[l] in dictV:
             dictV[v[l]] -= 1
 
         r += 1
         l += 1
 
-        if v[r] in dictP:
+        if r < len(v) and v[r] in dictP:
             dictV[v[r]] += 1
 
     if dictV == dictP:
