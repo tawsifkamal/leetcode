@@ -1,5 +1,18 @@
 
 
+"""
+String Decoding Algorithm Implementation
+
+This module implements a solution to decode strings with nested bracket notation.
+Given an encoded string like "3[a]2[bc]", return decoded string "aaabcbc".
+
+Algorithm: Stack-based parsing with nested bracket handling
+Time Complexity: O(maxK * n) where maxK is maximum repeat count, n is result length
+Space Complexity: O(m) where m is the depth of nested brackets
+
+Author: Leetcode Practice
+"""
+
 # # Given an encoded string, return its decoded string.
 
 # # The encoding rule is: k[encoded_string], where the encoded_string inside the square brackets is being repeated exactly k times. Note that k is guaranteed to be a positive integer.

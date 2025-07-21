@@ -1,3 +1,16 @@
+"""
+Palindromic Subsequence Generation Algorithm
+
+This module generates all possible palindromic subsequences from a given string
+using dynamic programming approach.
+
+Algorithm: Dynamic programming with substring expansion
+Time Complexity: O(n^3) where n is length of string
+Space Complexity: O(n^2)
+
+Author: Leetcode Practice
+"""
+
 def solution(s):
     # find palindromic substrings!!
     indexToPalindromes = {}

@@ -1,3 +1,16 @@
+"""
+Dijkstra's Shortest Path Algorithm Implementation
+
+This module implements Dijkstra's algorithm to find the shortest path between
+source and target nodes in a weighted graph using DFS with priority queue.
+
+Algorithm: Modified Dijkstra's with DFS traversal
+Time Complexity: O((V + E) log V) where V is vertices, E is edges
+Space Complexity: O(V)
+
+Author: Leetcode Practice
+"""
+
 import heapq
 
 

@@ -1,3 +1,16 @@
+"""
+Currency Conversion using Graph Traversal
+
+This module implements currency conversion by modeling exchange rates as a
+weighted graph and using DFS to find conversion paths.
+
+Algorithm: DFS graph traversal with rate multiplication
+Time Complexity: O(V + E) where V is currencies, E is exchange rates  
+Space Complexity: O(V)
+
+Author: Leetcode Practice
+"""
+
 def currencyConversion(rates, fromToArray):
     # rates is (2d array)
     # convert the array into an adjacency list where [from, to] is converted

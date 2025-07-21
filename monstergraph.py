@@ -1,4 +1,16 @@
 #!/bin/python3
+"""
+Monster Graph Pathfinding Algorithm
+
+This module implements a pathfinding algorithm in a grid with monsters.
+Finds the path from start to end that maximizes the minimum distance to monsters.
+
+Algorithm: Modified Dijkstra's with monster distance calculation
+Time Complexity: O(n*m*k + n*m*log(n*m)) where n,m are grid dimensions, k is monsters
+Space Complexity: O(n*m)
+
+Author: Leetcode Practice - HackerRank Problem
+"""
 
 import math
 import os

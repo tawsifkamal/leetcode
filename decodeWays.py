@@ -1,4 +1,17 @@
 
+"""
+Decode Ways Dynamic Programming Algorithm
+
+This module implements a solution to count the number of ways to decode a string
+where 'A'->1, 'B'->2, ..., 'Z'->26.
+
+Algorithm: Dynamic programming with state transitions
+Time Complexity: O(n) where n is length of string
+Space Complexity: O(n)
+
+Author: Leetcode Practice
+"""
+
 def numDecodings(s):
     """
     :type s: str

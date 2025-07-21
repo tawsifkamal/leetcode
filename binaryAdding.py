@@ -1,4 +1,17 @@
 
+"""
+Binary Addition Algorithm Implementation
+
+This module implements binary addition by converting integers to binary strings,
+performing bit-by-bit addition with carry handling, and converting back to integer.
+
+Algorithm: Manual binary addition with carry propagation
+Time Complexity: O(max(log a, log b))
+Space Complexity: O(max(log a, log b))
+
+Author: Leetcode Practice
+"""
+
 def getSum(a, b):
     """
     :type a: int

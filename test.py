@@ -1,3 +1,16 @@
+"""
+Task Scheduling Algorithm Implementation
+
+This module implements a solution for task scheduling with cooldown periods.
+Uses heap and queue to efficiently manage task frequencies and cooldowns.
+
+Algorithm: Greedy approach with priority queue and cooling queue
+Time Complexity: O(m log k) where m is total tasks, k is unique tasks
+Space Complexity: O(k)
+
+Author: Leetcode Practice
+"""
+
 import heapq
 
 def leastInterval(tasks, n):

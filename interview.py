@@ -1,3 +1,16 @@
+"""
+Palindrome Validation Algorithm
+
+This module checks if a string is a valid palindrome, ignoring non-alphanumeric
+characters and case differences.
+
+Algorithm: Two-pointer approach with character filtering
+Time Complexity: O(n) where n is length of string
+Space Complexity: O(1)
+
+Author: Leetcode Practice
+"""
+
 def solution(s):
     if s == None or len(s) == 0:
         return False
