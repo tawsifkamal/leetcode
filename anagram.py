@@ -55,28 +55,45 @@ return false
 
 
 def solution(p, v):
+    """
+    This function finds if a permutation of pattern p exists in string v.
+
+    Args:
+      p: The pattern string.
+      v: The string to search in.
+
+    Returns:
+      True if a permutation of p is found in v, False otherwise.
+    """
     l = 0
 
     dictV = {}
     dictP = {}
     vs = set()
 
+    # Create a frequency map of characters in the pattern p
     for i in range(len(p)):
         dictP[p[i]] = dictP.get(p[i], 0) + 1
         dictV[p[i]] = 0
 
+    # Iterate through the string v with a sliding window
     for r in range(len(v)):
+        # If the current character is in the pattern and its count in the current window (dictV)
+        # is already equal to its count in the pattern (dictP), shrink the window from the left
         while v[r] in dictP and dictP[v[r]] == dictV[v[r]]:
             dictV[v[r]] -= 1
             l = l + 1
 
         if v[r] in dictP:
+            # If the current character is in the pattern, increment its count in the window
             dictV[v[r]] += 1
             vs.add(v[r])
 
+            # If the window size is equal to the pattern length, we found an anagram
             if r - l + 1 == len(p):
                 return True
         elif v[r] not in dictP:
+            # If the current character is not in the pattern, reset the window and the counts
             while len(vs) != 0:
                 letter = vs.pop()
                 dictV[letter] = 0
@@ -137,6 +154,16 @@ while r < len(v) - 1:
 
 
 def solution2(v, p):
+    """
+    This function finds if a permutation of pattern p exists in string v using a sliding window approach.
+
+    Args:
+      v: The string to search in.
+      p: The pattern string.
+
+    Returns:
+      True if a permutation of p is found in v, False otherwise.
+    """
     if len(v) < len(p):
         return False
 
@@ -146,28 +173,34 @@ def solution2(v, p):
     dictP = {}
     dictV = {}
 
+    # Create a frequency map of characters in the pattern p
     for i in range(len(p)):
         dictP[p[i]] = dictP.get(p[i], 0) + 1
 
+    # Initialize the sliding window and its character frequency map
     while r < len(p):
         if v[r] in dictP:
-            dictV[v[i]] = dictV.get(v[i], 0) + 1
-
+            dictV[v[r]] = dictV.get(v[r], 0) + 1
         r = r + 1
 
-    
-    while r < len(v) - 1:
+    # Slide the window across the string v
+    while r < len(v):
         if dictV == dictP:
             return True
 
-        if v[l] in dictP:
-            dictV[v[l]] -= 1
+        if r < len(v):
+            # Expand the window from the right
+            if v[r] in dictP:
+                dictV[v[r]] = dictV.get(v[r], 0) + 1
+            r += 1
 
-        r += 1
-        l += 1
-
-        if v[r] in dictP:
-            dictV[v[r]] += 1
+        # Shrink the window from the left
+        if r - l > len(p):
+            if v[l] in dictP:
+                dictV[v[l]] -= 1
+                if dictV[v[l]] == 0:
+                    del dictV[v[l]]
+            l += 1
 
     if dictV == dictP:
         return True
